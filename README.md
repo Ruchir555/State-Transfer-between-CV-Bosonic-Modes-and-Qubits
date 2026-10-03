@@ -65,3 +65,16 @@ The notebook records an evolving research calculation rather than a packaged
 library. Run its sections in order within the part being studied; later cells
 reuse variables defined by earlier exploratory cells. The sorting helpers also
 modify list inputs in place, so pass copies if the original ordering matters.
+
+## Tested module and continuous integration
+
+The reusable functions in `t_transforms.py` provide non-mutating
+majorization checks, T-transform parameters and truncated TMSS probability
+vectors. Run their analytical tests with:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+GitHub Actions runs these tests on Python 3.11 and 3.13 for every push and
+pull request. The exploratory notebook is retained as the research record.
